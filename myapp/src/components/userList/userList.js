@@ -234,9 +234,17 @@ const users = [
   },
 ];
 
-function UserList() {
+function UserList(props) {
+
+  const onClickHandler=(e)=>{
+    e.preventDefault();
+    console.log("logout");
+    props.onLogOut();
+  }
   return (
     <div>
+      <button onClick={onClickHandler}>Logout</button>
+
       {users.map((user) => {
         return <User userData={user} />;
       })}

@@ -5,11 +5,16 @@ import { useState } from "react";
 
 function App() {
   const [isLoggedIn, changeIsLoggedIn] = useState(false);
+  
   function onLogin() {
     changeIsLoggedIn(true);
   }
 
-  return <div>{isLoggedIn ? <UserList /> : <Login onLogin={onLogin} />}</div>;
+  function onLogOut() {
+    changeIsLoggedIn(false);
+  }
+
+  return <div>{isLoggedIn ? <UserList onLogOut={onLogOut} /> : <Login onLogin={onLogin} />}</div>;
 }
 
 export default App;
