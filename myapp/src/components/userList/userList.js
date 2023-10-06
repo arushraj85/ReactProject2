@@ -236,7 +236,7 @@ const users = [
 
 function UserList() {
   return (
-    <div className="user">
+    <div>
       {users.map((user) => {
         return <User userData={user} />;
       })}
